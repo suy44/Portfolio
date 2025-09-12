@@ -4,6 +4,7 @@ import accidenimg from '../assets/accident.png'
 import drone from '../assets/Drone.jpg'
 import cv from '../assets/cv.png'
 import accid from '../assets/accid.png'
+import portfolio from '../assets/port.png'
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   
@@ -43,8 +44,16 @@ const Projects = () => {
       description: 'A touch-free system that uses camera-detected gestures to control audio functions in real time.',
       technologies: ['OpenCV', 'Python'],
       link: '#',
-      github: '#'
     },
+    {
+      id:5,
+      title:'Portfolio website',
+      category:'web',
+      image:portfolio,
+      description: 'Designed and developed a visually engaging portfolio website that highlights projects with a modern, responsive layout, smooth animations, and a user-friendly interface to create an impactful first impression.',
+      technologies:['React.js' , 'node.js'],
+      link:'#',
+    }
     
   ];
 
