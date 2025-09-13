@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Kalam:wght@300;400;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 * {
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Kalam', cursive;
   line-height: 1.6;
   color: #333;
   overflow-x: hidden;
@@ -26,7 +26,7 @@ body.dark-mode {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Dancing Script', cursive;
 }
 
 .container {
@@ -46,6 +46,7 @@ body.dark-mode .section {
 }
 
 .section-title {
+  font-family: 'kalam' , cursive;
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 50px;
@@ -183,8 +184,8 @@ body.dark-mode .header.scrolled {
 }
 
 .logo h2 {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 800;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
   font-size: 1.8rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   background-size: 200% 200%;
@@ -215,7 +216,7 @@ body.dark-mode .header.scrolled {
 .nav a {
   text-decoration: none;
   color: #333;
-  font-family: 'Manrope', sans-serif;
+  font-family:'Kalam', cursive;
   font-weight: 600;
   font-size: 1.1rem;
   position: relative;
@@ -415,17 +416,17 @@ body.dark-mode .header-social a:hover {
   
   .nav {
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: white;
-    transition: right 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 30px 30px;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: white;
+  transition: right 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 30px 30px;
   }
   
   body.dark-mode .nav {
@@ -553,7 +554,7 @@ body.dark-mode .hero {
 
 /* Text styles with animation readiness */
 .hero-text h1 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Dancing Script', cursive;
   font-size: 3.5rem;
   margin-bottom: 10px;
   color: #333;
@@ -581,7 +582,7 @@ body.dark-mode .hero-text h1 {
 }
 
 .hero-text h3 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Dancing Script', cursive;
   font-size: 1.5rem;
   margin-bottom: 20px;
   color: #667eea;
@@ -886,7 +887,7 @@ body.dark-mode .stat {
 }
 
 .stat h3 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'kalam', cursive;
   font-size: 2.5rem;
   color: #667eea;
   margin-bottom: 10px;
@@ -923,7 +924,7 @@ body.dark-mode .stat p {
 }
 
 .skill-header h3 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Dancing Script', cursive;
   color: #333;
   transition: color 0.3s ease;
 }
@@ -1091,7 +1092,7 @@ body.dark-mode .project-links a:hover {
 }
 
 .project-info h3 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Dancing Script', cursive;
   margin-bottom: 10px;
   font-size: 1.5rem;
   color: #333;
@@ -1212,7 +1213,7 @@ body.dark-mode .timeline-content {
 }
 
 .timeline-content h3 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Dancing Script', cursive;
   color: #333;
   margin-bottom: 5px;
   transition: color 0.3s ease;
@@ -1270,7 +1271,7 @@ body.dark-mode .timeline-content li {
 }
 
 .contact-info h3 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Dancing Script', cursive;
   font-size: 1.8rem;
   margin-bottom: 20px;
   color: #333;
@@ -1323,7 +1324,7 @@ body.dark-mode .contact-item i {
 }
 
 .contact-item h4 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Dancing Script', cursive;
   margin-bottom: 5px;
   color: #333;
   transition: color 0.3s ease;
@@ -1352,7 +1353,7 @@ body.dark-mode .contact-item p {
   padding: 15px;
   border: 1px solid #e9ecef;
   border-radius: 5px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Kalam', cursive;
   font-size: 1rem;
   background: #ffffff;
   color: #333;
@@ -1391,7 +1392,7 @@ body.dark-mode .footer {
 }
 
 .footer-logo h2 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Dancing Script', cursive;
   color: white;
   margin-bottom: 10px;
 }
@@ -1731,8 +1732,8 @@ body.dark-mode .stat h3.animated {
   
   .contact-item {
     flex-direction: column;
-    text-align: center;
-    gap: 10px;
+  text-align: center;
+  gap: 10px;
   }
   
   .contact-item i {
@@ -1957,7 +1958,7 @@ body.dark-mode .experience-details {
 .experience-details h5 {
   margin-bottom: 10px;
   color: #667eea;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Dancing Script', cursive;
   font-weight: 600;
 }
 
@@ -1970,7 +1971,7 @@ body.dark-mode .experience-details h5 {
   border: none;
   color: #667eea;
   cursor: pointer;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Dancing Script', cursive;
   font-weight: 500;
   padding: 8px 16px;
   margin-top: 15px;
