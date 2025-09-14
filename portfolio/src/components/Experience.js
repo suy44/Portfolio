@@ -42,7 +42,7 @@ const Experience = () => {
       id: 4,
       role: 'Competition Participant & Innovator',
       company: 'National & African Robotics Competitions',
-      period: '2017 - Present',
+      period: '2019 - Present',
       description: 'Participated in robotics, avionics, and AI competitions at national and African levels. Developed creative solutions under constraints.',
       achievements: [
         'Won 1st place in ARC 2 and 3rd place in ARC 3',
