@@ -45,7 +45,7 @@ const Hero = () => {
       <div className="container">
         <div className="hero-content">
           <div className="hero-text">
-            <h1 className={`hero-animate ${isVisible ? 'animate' : ''}`}>Hi, I'm Djaber Semaoui</h1>
+            <h1 className={`hero-animate ${isVisible ? 'animate' : ''}`}>Hi, I'm Djaber SEMAOUI</h1>
             <h3 className={`hero-animate ${isVisible ? 'animate' : ''}`}>Embedded Systems & AI Specialist, Frontend Developer, and Startup Founder</h3>
             <p className={`hero-animate ${isVisible ? 'animate' : ''}`}>I design and build beautiful, functional device prototypes, including IoT projects and custom solution devices, and I train powerful AI models with a strong focus on user experience and clean, maintainable code.</p>
             <div className={`hero-buttons hero-animate ${isVisible ? 'animate' : ''}`}>
