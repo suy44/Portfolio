@@ -8,6 +8,7 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -55,7 +56,7 @@ function App() {
         onClick={toggleDarkMode}
         aria-label="Toggle dark mode"
       >
-        <i className={darkMode ? 'fas fa-sun' : 'fas fa-moon'}></i>
+        <i className={darkMode ? 'bi bi-sun' : 'fas fa-moon'}></i>
       </button>
     </div>
   );
