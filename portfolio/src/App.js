@@ -55,7 +55,7 @@ function App() {
         onClick={toggleDarkMode}
         aria-label="Toggle dark mode"
       >
-        <i className={darkMode ? 'fas fa-lightbulb' : 'fas fa-moon'}></i>
+        <i className={darkMode ? 'mi mi-sun' : 'fas fa-moon'}></i>
       </button>
     </div>
   );
