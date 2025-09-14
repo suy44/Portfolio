@@ -19,14 +19,15 @@ const About = () => {
                 <strong>Name:</strong> Djaber Semaoui
               </div>
               <div className="detail-item">
-                <strong>Email:</strong> djaber.semaoui@outlook.com
+                <strong>University:</strong> Djilali Liabes university
               </div>
               <div className="detail-item">
                 <strong>Age:</strong> 19
               </div>
               <div className="detail-item">
-                <strong>From:</strong> Ghardaia, Algeria
+                <strong>Nabtakir Association Member</strong>
               </div>
+              
             </div>
           </div>
           <div className="about-stats">
