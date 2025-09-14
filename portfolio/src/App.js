@@ -8,7 +8,6 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
-import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
