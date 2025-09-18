@@ -1,6 +1,6 @@
 // src/components/Hero.js
 import React, { useEffect, useRef, useState } from 'react';
-import profilePhoto from '../assets/personalPhoto.jpg';
+import profilePhoto from '../assets/personalPhoto.png';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
