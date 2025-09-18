@@ -147,6 +147,7 @@ body.dark-mode .dark-mode-toggle i {
 }
 
 /* ========== ENHANCED HEADER STYLES ========== */
+
 .header {
   position: fixed;
   top: 0;
@@ -656,15 +657,26 @@ body.dark-mode .hero-text p {
   position: relative;
   justify-self: end;
 }
-
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 2%;
+  background: transparent;
+  box-shadow: 0 0 0 4px transparent;
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
+  background-size: 200% 200%;
+  animation: gradientBorder 8s ease infinite;
+  transform: translate(12px, 12px);
+  z-index: 1;
+}
 .profile-photo {
-  width: 100%;
+  width: 85%;
   max-width: 300px;
-  height: auto;
+  height: 22rem;
+  border-radius: 2%;
   aspect-ratio: 1/1;
-  border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #fff;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
@@ -678,59 +690,6 @@ body.dark-mode .profile-photo {
 .profile-photo:hover {
   transform: scale(1.05) rotate(3deg);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-}
-
-/* Floating elements around profile photo */
-.hero-image::before,
-.hero-image::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  animation: floatUpAndFade 10s ease-in-out infinite;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 1s ease-in-out 1s;
-}
-
-.hero-animate.animate ~ .hero-image::before,
-.hero-animate.animate ~ .hero-image::after {
-  opacity: 1;
-}
-
-.hero-image::before {
-  width: 60px;
-  height: 60px;
-  top: 20px;
-  right: -20px;
-  animation-delay: 0.5s;
-}
-
-.hero-image::after {
-  width: 40px;
-  height: 40px;
-  bottom: 10px;
-  left: -10px;
-  animation-delay: 1s;
-}
-
-@keyframes floatUpAndFade {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  20% {
-    opacity: 0.7;
-    transform: translateY(0);
-  }
-  80% {
-    opacity: 0.7;
-    transform: translateY(-60px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-80px);
-  }
 }
 
 /* Typing animation effect for title */
@@ -804,7 +763,32 @@ body.dark-mode .hero-animate.animate h1 {
     max-width: 250px;
   }
   
-  .hero-image::before,
+  .hero-image::before {
+    content: "";
+    position:absolute;
+    inset: 0;
+    border-radius: 2%;
+    background: transparent;
+    box-shadow: 0 0 0 4px transparent;
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
+    background-size: 200% 200%;
+    animation: gradientBorder 8s ease infinite;
+    transform: translate(8px, 8px);
+    z-index: 1;
+  }
+
+  @keyframes gradientBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  body.dark-mode .hero-image::before {
+    background: linear-gradient(45deg, #8b5cf6, #a78bfa, #f093fb, #8b5cf6);
+    background-size: 200% 200%;
+    animation: gradientBorder 8s ease infinite;
+  }
+  
   .hero-image::after {
     display: none;
   }
@@ -970,35 +954,26 @@ body.dark-mode .hero-animate.animate h1 {
   .timeline-content {
     padding: 12px;
   }
-  
-  /* Restore and adjust floating elements around profile photo */
-  .hero-image::before,
-  .hero-image::after {
-    display: block;
-    opacity: 0;
-    animation: floatUpAndFade 10s ease-in-out infinite;
-  }
+  .hero-image {
+  position: relative;
+  display: inline-block;
+  width: 15rem;
+  height: 22rem;
+}
+ .hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 2%;
+  background: transparent;
+  box-shadow: 0 0 0 4px transparent;
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
+  background-size: 200% 200%;
+  animation: gradientBorder 8s ease infinite;
+  transform: translate(8px, 8px);
+  z-index: 1;
+}
 
-  .hero-animate.animate ~ .hero-image::before,
-  .hero-animate.animate ~ .hero-image::after {
-    opacity: 1;
-  }
-
-  .hero-image::before {
-    width: 40px;
-    height: 40px;
-    top: 20px;
-    right: -15px;
-    animation-delay: 0.5s;
-  }
-
-  .hero-image::after {
-    width: 30px;
-    height: 30px;
-    bottom: 10px;
-    left: -10px;
-    animation-delay: 1s;
-  }
 }
 
 /* About Section */
@@ -1803,7 +1778,7 @@ body.dark-mode .stat h3.animated {
   }
   
   .profile-photo {
-    max-width: 250px;
+    width: auto;
     justify-self: center;
     margin-left: 0;
   }
@@ -1890,7 +1865,7 @@ body.dark-mode .stat h3.animated {
   }
   
   .profile-photo {
-    max-width: 200px;
+    max-width: 14rem;
   }
   
   .about-stats {
