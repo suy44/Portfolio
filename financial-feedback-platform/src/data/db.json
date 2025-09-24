@@ -1,0 +1,104 @@
+{
+  "financialSocieties": [
+    {
+      "id": "1",
+      "name": "National Bank",
+      "services": [
+        "Savings Accounts",
+        "Loans",
+        "Credit Cards"
+      ],
+      "logo": "🏦",
+      "description": "Leading national banking services"
+    },
+    {
+      "id": "2",
+      "name": "City Finance",
+      "services": [
+        "Investments",
+        "Wealth Management"
+      ],
+      "logo": "💼",
+      "description": "Premium financial advisory"
+    },
+    {
+      "id": 1758739117134,
+      "name": "Nabtakir",
+      "description": "moeny",
+      "logo": "🏦",
+      "services": [
+        "saving",
+        "money.."
+      ]
+    }
+  ],
+  "feedbacks": [
+    {
+      "id": "1",
+      "societyId": 1,
+      "rating": 4,
+      "comment": "Great customer service!",
+      "serviceType": "Savings Accounts",
+      "timestamp": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": "b428",
+      "societyId": "2",
+      "rating": 5,
+      "comment": "",
+      "serviceType": "Investments",
+      "timestamp": "2025-09-24T10:49:14.480Z"
+    },
+    {
+      "id": "9df4",
+      "societyId": "1",
+      "rating": 4,
+      "comment": "maybe\n",
+      "serviceType": "Savings Accounts",
+      "timestamp": "2025-09-24T10:50:04.604Z"
+    },
+    {
+      "id": "946d",
+      "societyId": "1",
+      "rating": 0,
+      "comment": "",
+      "serviceType": "Savings Accounts",
+      "timestamp": "2025-09-24T11:01:39.584Z"
+    },
+    {
+      "id": "325c",
+      "societyId": "1",
+      "rating": 5,
+      "comment": "very good ",
+      "serviceType": "Savings Accounts",
+      "timestamp": "2025-09-24T11:15:31.669Z"
+    },
+    {
+      "id": "ff38",
+      "societyId": "2",
+      "rating": 2,
+      "comment": "your service is very weak ",
+      "serviceType": "Investments",
+      "timestamp": "2025-09-24T11:18:25.976Z"
+    },
+    {
+      "id": "c08f",
+      "societyId": "1",
+      "rating": 5,
+      "comment": "excellent service",
+      "serviceType": "Savings Accounts",
+      "timestamp": "2025-09-24T11:22:48.267Z"
+    }
+  ],
+  "admins": [
+    {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@financialplatform.com",
+      "password": "hashed_password_here",
+      "role": "admin",
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "sessions": []
+}
