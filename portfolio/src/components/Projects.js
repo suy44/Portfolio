@@ -5,6 +5,7 @@ import drone from '../assets/Drone.jpg'
 import cv from '../assets/cv.png'
 import accid from '../assets/accid.png'
 import portfolio from '../assets/port.png'
+import WavezJ from '../assets/wavez.png'
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   
@@ -53,6 +54,15 @@ const Projects = () => {
       description: 'Designed and developed a visually engaging portfolio website that highlights projects with a modern, responsive layout, smooth animations, and a user-friendly interface to create an impactful first impression.',
       technologies:['React.js' , 'node.js'],
       link:'#',
+    },
+    {
+      id:6,
+      title:'WaveZ club website',
+      category:'web',
+      image:WavezJ,
+      description: "Designed and developed an interactive website for Wavez University Club — a robotics and AI organization — featuring a modern, responsive layout, dynamic project showcases, and engaging animations to highlight the club’s innovation, events, and achievements while fostering community engagement.",
+      technologies:['next.js' , 'tailwind.css' ],
+      link:'https://www.wavez.website'
     }
     
   ];
