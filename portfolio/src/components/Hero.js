@@ -8,6 +8,9 @@ const Hero = () => {
   const observer = useRef(null);
 
   useEffect(() => {
+    // Capture the ref value in a local variable for the cleanup function
+    const currentHero = heroRef.current;
+
     // Create Intersection Observer to detect when hero section is in view
     observer.current = new IntersectionObserver(
       ([entry]) => {
@@ -29,13 +32,13 @@ const Hero = () => {
       { threshold: 0.5 }
     );
 
-    if (heroRef.current) {
-      observer.current.observe(heroRef.current);
+    if (currentHero) {
+      observer.current.observe(currentHero);
     }
 
     return () => {
-      if (observer.current && heroRef.current) {
-        observer.current.unobserve(heroRef.current);
+      if (observer.current && currentHero) {
+        observer.current.unobserve(currentHero);
       }
     };
   }, []);
