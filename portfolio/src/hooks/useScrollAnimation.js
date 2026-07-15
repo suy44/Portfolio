@@ -5,6 +5,9 @@ export const useScrollAnimation = () => {
   const domRef = useRef();
 
   useEffect(() => {
+    // Capture the ref value in a local variable for the cleanup function
+    const currentElement = domRef.current;
+
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         // Reset animation when element leaves viewport
@@ -19,13 +22,13 @@ export const useScrollAnimation = () => {
       rootMargin: '0px 0px -100px 0px' // Adjust trigger point
     });
 
-    if (domRef.current) {
-      observer.observe(domRef.current);
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (domRef.current) {
-        observer.unobserve(domRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, []);
