@@ -7,6 +7,9 @@ export const useCounterAnimation = (end, duration = 2000) => {
   const animationRef = useRef(null);
 
   useEffect(() => {
+    // Capture the ref value in a local variable for the cleanup function
+    const currentElement = domRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -21,13 +24,13 @@ export const useCounterAnimation = (end, duration = 2000) => {
       { threshold: 0.5 } // Trigger when 50% of element is visible
     );
 
-    if (domRef.current) {
-      observer.observe(domRef.current);
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (domRef.current) {
-        observer.unobserve(domRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
