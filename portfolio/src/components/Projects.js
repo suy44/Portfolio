@@ -73,7 +73,7 @@ const Projects = () => {
       image: nancyRest,
       description: 'A custom, responsive landing page designed and developed for a restaurant client, featuring a modern layout and deployed on Vercel.',
       technologies: ['React.js', 'Vercel'], // Feel free to adjust these based on the exact stack used
-      link: '#', // Replace with the Vercel URL once you locate it
+      link: 'https://restaurant-nu-rosy.vercel.app', // Replace with the Vercel URL once you locate it
     }
   ];
 
