@@ -6,6 +6,8 @@ import cv from '../assets/cv.png'
 import accid from '../assets/accid.png'
 import portfolio from '../assets/port.png'
 import WavezJ from '../assets/wavez.png'
+import nancyRest from '../assets/nancy-restaurant.png' // Add your screenshot to the assets folder
+
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   
@@ -63,8 +65,16 @@ const Projects = () => {
       description: "Designed and developed an interactive website for Wavez University Club — a robotics and AI organization — featuring a modern, responsive layout, dynamic project showcases, and engaging animations to highlight the club’s innovation, events, and achievements while fostering community engagement.",
       technologies:['next.js' , 'tailwind.css' ],
       link:'https://www.wavez.website'
+    },
+    {
+      id: 7,
+      title: "Nancy's Restaurant Landing Page",
+      category: 'web',
+      image: nancyRest,
+      description: 'A custom, responsive landing page designed and developed for a restaurant client, featuring a modern layout and deployed on Vercel.',
+      technologies: ['React.js', 'Vercel'], // Feel free to adjust these based on the exact stack used
+      link: '#', // Replace with the Vercel URL once you locate it
     }
-    
   ];
 
   const filters = ['all', 'Embedded system', 'web', 'avionics', 'AI'];
