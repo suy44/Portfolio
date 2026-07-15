@@ -11,7 +11,7 @@ const SidebarRight = () => {
 
   const whoToFollow = [
     { name: 'GitHub', handle: '@suy44', link: 'https://github.com/suy44' },
-    { name: 'LinkedIn', handle: '@djabersemaoui', link: '#' }
+    { name: 'LinkedIn', handle: '@djabersemaoui', link: 'https://linkedin.com/' }
   ];
 
   return (
@@ -28,7 +28,7 @@ const SidebarRight = () => {
             <div className="trending-count">{skill.posts}</div>
           </div>
         ))}
-        <a href="#" className="widget-more">Show more</a>
+        <span className="widget-more" style={{ cursor: 'pointer' }}>Show more</span>
       </div>
 
       {/* Connect Widget */}

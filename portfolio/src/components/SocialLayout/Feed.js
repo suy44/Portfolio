@@ -58,6 +58,15 @@ const Feed = ({ activeTab, setActiveTab }) => {
     },
     {
       id: 6,
+      title: 'Portfolio Website',
+      image: portfolio,
+      desc: 'Designed and developed a visually engaging portfolio website with modern, responsive layout, smooth animations, and a user-friendly interface.',
+      tech: ['Reactjs', 'CSS'],
+      link: '#',
+      date: '3w'
+    },
+    {
+      id: 7,
       title: "Nancy's Restaurant Web",
       image: nancyRest,
       desc: 'A custom, responsive landing page designed and developed for a local restaurant client. Modern layout deployed seamlessly.',
