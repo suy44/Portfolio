@@ -6,156 +6,200 @@ const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', or 'error'
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
-
     try {
       const response = await fetch('https://formspree.io/f/mwpnyyqw', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
-        throw new Error('Form submission failed');
+        throw new Error('Failed');
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const contactItems = [
+    {
+      icon: 'bi-geo-alt',
+      label: 'Location',
+      value: 'Ghardaia, Algeria',
+      href: null,
+    },
+    {
+      icon: 'bi-envelope',
+      label: 'Email',
+      value: 'djaber.semaoui@outlook.com',
+      href: 'mailto:djaber.semaoui@outlook.com',
+    },
+    {
+      icon: 'bi-telephone',
+      label: 'Phone',
+      value: '+213 673-584-646',
+      href: 'tel:+213673584646',
+    },
+    {
+      icon: 'bi-linkedin',
+      label: 'LinkedIn',
+      value: '/in/djaber-semaoui/',
+      href: 'https://www.linkedin.com/in/djaber-semaoui/',
+    },
+  ];
+
   return (
     <section id="contact" className="section contact">
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
+        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+          <div className="section-tag">Contact</div>
+          <h2 className="section-title">Get In <span className="gradient-text">Touch</span></h2>
+          <p className="section-subtitle">
+            Have a project in mind or just want to say hi? My inbox is always open.
+          </p>
+        </div>
+
         <div className="contact-content">
+          {/* Left: Info */}
           <div className="contact-info">
-            <h3>Let's talk about your project</h3>
-            <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
-            
+            <h3 className="contact-heading">
+              Let's build something <span>great together</span>
+            </h3>
+            <p className="contact-subtext">
+              Whether you're looking for an embedded systems engineer, AI developer, or a creative frontend developer — I'm here and available. Let's talk about your project!
+            </p>
+
             <div className="contact-details">
-              <div className="contact-item">
-                <i className="fas fa-map-marker-alt"></i>
-                <div>
-                  <h4>Location</h4>
-                  <p>Ghardaia, Algeria</p>
-                </div>
-              </div>
-              
-              <div className="contact-item">
-                <i className="fas fa-envelope"></i>
-                <div>
-                  <h4>Email</h4>
-                  <p>djaber.semaoui@outlook.com</p>
-                </div>
-              </div>
-              
-              <div className="contact-item">
-                <i className="fas fa-phone"></i>
-                <div>
-                  <h4>Phone</h4>
-                  <p>+213 673-584-646</p>
-                </div>
-              </div>
+              {contactItems.map((item, i) => {
+                const Tag = item.href ? 'a' : 'div';
+                const props = item.href
+                  ? { href: item.href, target: item.href.startsWith('http') ? '_blank' : undefined, rel: 'noopener noreferrer' }
+                  : {};
+                return (
+                  <Tag key={i} className="contact-item" {...props}>
+                    <div className="contact-item-icon">
+                      <i className={`bi ${item.icon}`} />
+                    </div>
+                    <div>
+                      <div className="contact-item-label">{item.label}</div>
+                      <div className="contact-item-value">{item.value}</div>
+                    </div>
+                  </Tag>
+                );
+              })}
+            </div>
+
+            {/* Availability badge */}
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: '10px',
+              background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.25)',
+              borderRadius: '100px', padding: '10px 20px', marginTop: '8px'
+            }}>
+              <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#10b981', display: 'block', animation: 'pulse-dot 2s infinite' }} />
+              <span style={{ fontSize: '0.88rem', color: '#10b981', fontFamily: 'var(--font-mono)' }}>
+                Currently available for freelance work
+              </span>
             </div>
           </div>
-          
+
+          {/* Right: Form */}
           <div className="contact-form">
-            {/* Status Messages */}
             {submitStatus === 'success' && (
               <div className="alert alert-success">
-                Thank you for your message! I will get back to you soon.
+                ✅ Thank you! Your message has been sent. I'll get back to you soon.
               </div>
             )}
-            
             {submitStatus === 'error' && (
               <div className="alert alert-error">
-                Sorry, there was an error sending your message. Please try again.
+                ❌ Something went wrong. Please try again or email me directly.
               </div>
             )}
-            
+
             <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  disabled={isSubmitting}
-                />
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="contact-name">Your Name</label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    name="name"
+                    placeholder="John Doe"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    disabled={isSubmitting}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="contact-email">Email Address</label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    disabled={isSubmitting}
+                  />
+                </div>
               </div>
-              
+
               <div className="form-group">
+                <label htmlFor="contact-subject">Subject</label>
                 <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  disabled={isSubmitting}
-                />
-              </div>
-              
-              <div className="form-group">
-                <input
+                  id="contact-subject"
                   type="text"
                   name="subject"
-                  placeholder="Subject"
+                  placeholder="Project collaboration / Question..."
                   value={formData.subject}
                   onChange={handleChange}
                   required
                   disabled={isSubmitting}
                 />
               </div>
-              
+
               <div className="form-group">
+                <label htmlFor="contact-message">Message</label>
                 <textarea
+                  id="contact-message"
                   name="message"
-                  placeholder="Your Message"
-                  rows="5"
+                  placeholder="Tell me about your project..."
                   value={formData.message}
                   onChange={handleChange}
                   required
                   disabled={isSubmitting}
-                ></textarea>
+                />
               </div>
-              
-              <button 
-                type="submit" 
-                className="btn" 
+
+              <button
+                type="submit"
+                id="contact-submit-btn"
+                className="form-submit"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? (
+                  <span>Sending... ⏳</span>
+                ) : (
+                  <span>Send Message →</span>
+                )}
               </button>
             </form>
           </div>
